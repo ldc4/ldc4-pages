@@ -17,8 +17,14 @@ class KnowledgePage extends React.Component {
   render() {
     const { radioValue } = this.state;
     return (
-      <div>
-        <img src={`/static/roadmap-${radioValue}.png`} alt="知识地图(中文版)" />
+      <div className="container">
+        <style jsx>{`
+          .container {
+            max-width: 1024px;
+            margin: 0 auto;
+          }
+        `}</style>
+        <img style={{ width: '100%', height: '100%' }} src={`/static/roadmap-${radioValue}.png`} alt="知识地图(中文版)" />
         <div>
           <label>
             <input
@@ -30,7 +36,7 @@ class KnowledgePage extends React.Component {
             />
             <span>中文</span>
           </label>
-          <label>
+          <label style={{ marginLeft: 10 }}>
             <input
               type="radio"
               name="lang"
